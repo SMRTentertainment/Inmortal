@@ -444,6 +444,7 @@
 "Assets/Scripts/PlatformSpawner.cs"
 "Assets/Scripts/PlayerMovement.cs"
 "Assets/Scripts/Trampoline.cs"
+"Assets/Scripts/TrampolineSpawner.cs"
 -langversion:9.0
 /deterministic
 /optimize+
