@@ -446,6 +446,7 @@
 "Assets/Scripts/AudioVolumen.cs"
 "Assets/Scripts/Enemy.cs"
 "Assets/Scripts/Musica/VolumeControl.cs"
+"Assets/Scripts/PantallaCompleta.cs"
 "Assets/Scripts/PlatformSpawner.cs"
 "Assets/Scripts/PlayerMovement.cs"
 "Assets/Scripts/Trampoline.cs"
