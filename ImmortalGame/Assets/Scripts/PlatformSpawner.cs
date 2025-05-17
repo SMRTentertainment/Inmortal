@@ -7,8 +7,15 @@ public class PlatformSpawner : MonoBehaviour
     
     public GameObject platformPrefab;
     public float spawnHeight = 0f;
-    public float distanceBetweenPlatforms = 0.1f;
+    public float distanceBetweenPlatforms = 0.000001f;
+    public float spawnInterval = 0.000000000001f;
     
+    private bool isSpawning = false;
+    
+    
+    public LayerMask platformLayer;
+    
+    private float spawnTimer = 0f;
     private Vector3 lastSpawnPosition;
     private bool IsSpawning = false;
 
@@ -28,14 +35,12 @@ public class PlatformSpawner : MonoBehaviour
 
         if (IsSpawning)
         {
-            Vector3 mousePos = GetMouseWorldPosition();
-            float distance = Vector3.Distance(mousePos, lastSpawnPosition);
-            Debug.Log($"distance {distance}");
-
-            if (distance >= distanceBetweenPlatforms)
+            Vector3 currentMousePos = GetMouseWorldPosition();
+            // Solo spawnea si el mouse se movió lo suficiente desde la última plataforma
+            if (Vector3.Distance(currentMousePos, lastSpawnPosition) >= distanceBetweenPlatforms)
             {
-                lastSpawnPosition = mousePos;
-                SpawnPlatform(lastSpawnPosition);
+                SpawnPlatform(currentMousePos);
+                lastSpawnPosition = currentMousePos;
             }
         }
     }
